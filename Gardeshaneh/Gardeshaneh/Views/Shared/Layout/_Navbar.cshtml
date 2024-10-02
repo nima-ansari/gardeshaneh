@@ -1,0 +1,27 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="px-3 py-2">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <div class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto text-center mt-2 mt-lg-0">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        @(string.IsNullOrEmpty(User.Identity.Name) ? "کاربر عزیز" : User.Identity.Name)
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark text-right w-fill">
+                        <li><a class="dropdown-item" asp-area="admin" asp-controller="home" asp-action="index">پنل کاربری</a></li>
+                        <li><a class="dropdown-item" asp-controller="account" asp-action="logout">خروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-end d-lg-inline d-none mt-1">
+                <a class="navbar-brand m-0" href="/">
+                    <img alt="سایت گردسانه" height="30" src="~/common-content/img/gardeshaneg-logo-with-name.svg" />
+                </a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,10 @@
+﻿@{
+    var sahelFont = Context.Request.Scheme.ToString() + "://" + Context.Request.Host.ToString() + "/fonts/sahel/Sahel.woff";
+}
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="preload" href="@sahelFont" as="font" type="font/woff" crossorigin />
+
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+@* <link href="~/common-content/css/notifications.css" rel="stylesheet" /> *@

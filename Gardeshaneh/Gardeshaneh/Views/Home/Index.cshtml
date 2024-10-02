@@ -1,8 +1,33 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    string title = "گردشانه | راهنمای تفریحی و گردشی";
+    var currentPath = Context.Request.Scheme.ToString() + "://" + Context.Request.Host.ToString() + Context.Request.Path.ToString();
+    string description = "گردشانه، راهنمای یافتن بهترین مکان های تفریحی و گردشی در سراسر ایران است.";
+    string url = Context.Request.Scheme.ToString() + "://" + Context.Request.Host.ToString();
+    string imageUrl = url + "/img/gardeshaneh-og-logo.png";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section MetaTags {
+    <title>@title</title>
+    <link rel="canonical" href="@currentPath" />
+    <meta name="description" content="@description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:image" content="@imageUrl" />
+    <meta property="og:image:secure_url" content="@imageUrl" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@description">
+    <meta name="twitter:image" content="@imageUrl" />
+}
+
+@* @await Component.InvokeAsync("HomeHeader") *@
+<partial name="_Header" />
+
+<div class="container">
+    @*<partial name="AboutUsPartial" />*@
+    @* @await Component.InvokeAsync("HomePlace") *@
+    @*@await Component.InvokeAsync("HomeBlog")*@
 </div>

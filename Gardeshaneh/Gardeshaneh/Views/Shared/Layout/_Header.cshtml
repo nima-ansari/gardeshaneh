@@ -1,0 +1,45 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-1" aria-label="Ninth navbar example">
+    <div class="container-xl">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">گردشانه</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-button" aria-controls="navbar-button" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse rtl" id="navbar-button">
+            <ul class="navbar-nav mb-2 mb-lg-0 p-0">
+               @*  @if (Model != null && Model.Count > 0)
+                {
+                    @foreach (var category in Model.Where(i => i.ParentId == null))
+                    {
+                        <li class="nav-item dropdown">
+                            <a title="@category.PersianName"
+                               class="btn nav-link dropdown-toggle"
+                               id="drop-down-@category.Id"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                @category.PersianName
+                            </a>
+                            @if (Model.Any(i => i.ParentId == category.Id))
+                            {
+                                <ul class="dropdown-menu text-center"
+                                    aria-labelledby="drop-down-@category.Id">
+                                    @foreach (var subCategory in Model.Where(i => i.ParentId == category.Id))
+                                    {
+                                        <li>
+                                            <a asp-controller="Place"
+                                               asp-action="Index"
+                                               asp-route-CategoryId="@subCategory.Id"
+                                               title="@subCategory.PersianName"
+                                               class="dropdown-item">
+                                                @subCategory.PersianName
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                } *@
+            </ul>
+        </div>
+    </div>
+</nav>

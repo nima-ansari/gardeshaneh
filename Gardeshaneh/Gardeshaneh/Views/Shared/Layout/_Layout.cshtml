@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="Layout/_MetaTags" />
+    @RenderSection(name: "MetaTags", required: true)
+    <partial name="Layout/_Styles" />
+    @RenderSection(name: "Styles", required: false)
+</head>
+<body>
+    <partial name="Layout/_Navbar" />
+    <partial name="Layout/_Header" />
+    @RenderBody()
+    <partial name="Layout/_Footer" />
+    <partial name="Layout/_Scripts" />
+    @RenderSection(name: "Scripts", required: false)
+    @* <partial name="_Notification" /> *@
+</body>
+</html>
