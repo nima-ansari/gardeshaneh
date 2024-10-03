@@ -240,11 +240,11 @@ button.accept-policy {
 }
 
 #site-header {
-    background-image: url('/img/home-main-bg.jpg');
+    background-image: url('/img/site/home-main-bg.jpg');
     background-size: cover;
 }
 
 #site-footer {
-    background-image: url('/img/home-main-bg.jpg');
+    background-image: url('/img/site/home-main-bg.jpg');
     background-size: cover;
 }

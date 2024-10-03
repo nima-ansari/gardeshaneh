@@ -1,0 +1,47 @@
+﻿.place-detail-tags {
+    list-style: none;
+    padding: 0px;
+}
+
+    .place-detail-tags li {
+        display: inline-flex;
+        padding: 7px;
+        margin-top: 7px;
+        background-color: #EBECED;
+        border-radius: 50rem;
+    }
+
+.place-detail-social-link {
+    margin-top: 7px;
+    color: #000;
+    background-color: #ebeced;
+    border-color: #dee2e6;
+}
+
+    .place-detail-social-link:hover {
+        background-color: #d3d4d4;
+    }
+
+#place-description {
+    min-height: 200px;
+}
+
+#place-main-image {
+    height: 360px;
+}
+
+    #place-main-image a {
+        position: relative;
+        top: 77%;
+    }
+
+.plcae-map-container {
+    height: 225px;
+    background-image: url('/site-content/img/site/map-test.JPG');
+}
+
+.place-detail-map-text {
+    position: relative;
+    top: 40%;
+    font-weight: bold;
+}

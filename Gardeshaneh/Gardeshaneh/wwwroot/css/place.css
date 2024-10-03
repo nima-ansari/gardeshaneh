@@ -1,0 +1,189 @@
+﻿.card {
+    border: none;
+    margin-bottom: 2.2rem;
+}
+
+    .card.card-statistic {
+        background: linear-gradient(-180deg, #25a6f1, #54b9ff);
+        box-shadow: -1px 2px 5px rgba(47, 170, 244, 0.5);
+    }
+
+        .card.card-statistic .card-title {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.8px;
+            margin-bottom: 0;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .card.card-statistic .card-right p {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .card.card-statistic .card-right span.green {
+            color: #6fff6f;
+        }
+
+        .card.card-statistic .card-right span.red {
+            color: #ff7979;
+        }
+
+        .card.card-statistic .chart-wrapper {
+            height: 100px;
+        }
+
+    .card .card-header {
+        border: none;
+    }
+
+        .card .card-header h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .card .card-header ~ .card-body {
+            padding-top: 0;
+        }
+
+    .card .card-content {
+        position: relative;
+    }
+
+    .card .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card .card-body {
+        padding: 1.5rem;
+    }
+
+    .card .card-heading {
+        color: #555;
+        font-size: 1.5rem;
+    }
+
+    .card .card-img-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+        .card .card-img-overlay p {
+            color: #eee;
+        }
+
+        .card .card-img-overlay .card-title {
+            color: #fff;
+        }
+
+.pricing .card {
+    border-left: 1px solid #e9ecef;
+    box-shadow: none;
+    box-shadow: 0 10px 10px #e9ecef;
+    margin-bottom: 0.5rem;
+}
+
+.pricing h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.pricing .card-header .card-title {
+    font-size: 2rem !important;
+    margin-bottom: 0;
+}
+
+.pricing .card-header p {
+    font-size: 0.8rem;
+}
+
+.pricing ul li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+    .pricing ul li i,
+    .pricing ul li svg {
+        color: #198754;
+        font-size: 1rem;
+        margin-left: 7px;
+        width: 1rem;
+    }
+
+.pricing .card-highlighted {
+    background-color: #435ebe;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+    .pricing .card-highlighted .card-body,
+    .pricing .card-highlighted .card-header {
+        background-color: #435ebe;
+        color: #fff;
+    }
+
+    .pricing .card-highlighted ul li {
+        color: #fff;
+    }
+
+        .pricing .card-highlighted ul li i,
+        .pricing .card-highlighted ul li svg {
+            color: #479f76;
+        }
+
+    .pricing .card-highlighted .card-footer {
+        background-color: #435ebe;
+    }
+
+    .pricing .card-highlighted .card-title {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+
+.filter-reset-button {
+    float: left;
+    margin-top: 5px;
+    color: black;
+}
+
+.card-header {
+    background-color: #e6e6e6;
+    margin-bottom: 7px;
+}
+
+.form-group {
+    margin-bottom: 0.7rem;
+}
+
+.bg-mazer-blue {
+    background-color: #435EBE;
+    color: #fff;
+}
+
+.pagination a:hover {
+    cursor: pointer;
+}
+
+.pagination .active a {
+    background-color: #435EBE !important;
+}
+
+@media (max-width: 1200px) {
+    .place-card .card-body {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .place-card .card-body {
+        min-height: unset;
+    }
+
+    .place-card .btn-group {
+        position: unset;
+        bottom: unset;
+    }
+}
