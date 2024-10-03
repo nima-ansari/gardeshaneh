@@ -14,4 +14,13 @@
     <Folder Include="Persistence\DatabaseScripts\Procedures\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="HA.Database">
+      <HintPath>..\tools\Dlls\HA.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="HA.Tools">
+      <HintPath>..\tools\Dlls\HA.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -1,3 +1,5 @@
+using NToastNotify;
+
 namespace Gardeshaneh
 {
     public class Program
@@ -6,8 +8,25 @@ namespace Gardeshaneh
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            ConfigurationManager configuration = builder.Configuration;
+            IWebHostEnvironment environment = builder.Environment;
+            var services = builder.Services;
+
+            //ConfigureServices
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation()
+                .AddNToastNotifyToastr(new ToastrOptions()
+                {
+                    ProgressBar = true,
+                    PositionClass = ToastPositions.BottomLeft,
+                    NewestOnTop = true,
+                    TimeOut = 5000,
+                    CloseOnHover = true,
+                    ToastClass = "toast-notification"
+                });
+
+            services.AddCoreServices(builder.Configuration);
+            services.AddInfrastructureServices(builder.Configuration);
 
             var app = builder.Build();
 
