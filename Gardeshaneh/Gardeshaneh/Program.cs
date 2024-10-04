@@ -45,9 +45,10 @@ namespace Gardeshaneh
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.UseNToastNotify();
+
+            app.MapAreaControllerRoute("adminArea", "admin", "admin/{controller=Home}/{action=Index}/{id?}");
+            app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

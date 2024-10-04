@@ -13,6 +13,6 @@
     <partial name="Layout/_Footer" />
     <partial name="Layout/_Scripts" />
     @RenderSection(name: "Scripts", required: false)
-    @* <partial name="_Notification" /> *@
+    @await Component.InvokeAsync("NToastNotify")
 </body>
 </html>
