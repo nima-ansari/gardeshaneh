@@ -10,6 +10,7 @@ CREATE PROCEDURE dbo.spGetCategories_l
 	@APersianName NVARCHAR(100),
 	@AEnglishName NVARCHAR(100),
 	@AActiveState TINYINT,
+	@ADeleteState TINYINT,
 	@APagesize INT,
 	@APageIndex INT
 AS
@@ -22,6 +23,7 @@ BEGIN
 		@PersianName NVARCHAR(100) = LTRIM(RTRIM(@APersianName)),
 		@EnglishName NVARCHAR(10) = LTRIM(RTRIM(@AEnglishName)),
 		@ActiveState TINYINT = COALESCE(@AActiveState, 0),
+		@DeleteState TINYINT = COALESCE(@ADeleteState, 0),
 		@Pagesize INT = COALESCE(@APagesize, 0),
 		@PageIndex INT = COALESCE(@APageIndex, 0)
 
@@ -40,6 +42,7 @@ BEGIN
 			AND (@PersianName IS NULL OR PersianName LIKE CONCAT(N'%', @PersianName, '%'))
 			AND (@EnglishName IS NULL OR EnglishName LIKE CONCAT(N'%', @EnglishName, '%'))
 			AND (@ActiveState < 1 OR IsActive = @ActiveState - 1)
+			AND (@DeleteState < 1 OR IsDelete = @DeleteState - 1)
 	)
 	,Total AS
 	(

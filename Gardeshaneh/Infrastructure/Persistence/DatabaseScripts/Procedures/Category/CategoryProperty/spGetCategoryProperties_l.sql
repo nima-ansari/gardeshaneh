@@ -9,6 +9,7 @@ CREATE PROCEDURE dbo.spGetCategoryProperties_l
 	@APropertyId BIGINT,
 	@ACategoryId BIGINT,
 	@AActiveState TINYINT,
+	@ADeleteState TINYINT,
 	@APagesize INT,
 	@APageIndex INT
 AS
@@ -20,6 +21,7 @@ BEGIN
 		@PropertyId BIGINT = COALESCE(@APropertyId, 0),
 		@CategoryId BIGINT = COALESCE(@ACategoryId, 0),
 		@ActiveState TINYINT = COALESCE(@AActiveState, 0),
+		@DeleteState TINYINT = COALESCE(@ADeleteState, 0),
 		@Pagesize INT = COALESCE(@APagesize, 0),
 		@PageIndex INT = COALESCE(@APageIndex, 0)
 
@@ -37,6 +39,7 @@ BEGIN
 			(@PropertyId < 1 OR PropertyId = @PropertyId)
 			AND (@CategoryId < 1 OR CategoryId = @CategoryId)
 			AND (@ActiveState < 1 OR IsActive = @ActiveState - 1)
+			AND (@DeleteState < 1 OR IsDelete = @DeleteState - 1)
 	)
 	,Total AS
 	(
