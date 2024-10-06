@@ -1,14 +1,14 @@
 USE [Gardeshaneh]
 GO
 
-IF EXISTS(SELECT 1 FROM sys.procedures WHERE [object_id] = OBJECT_ID('dbo.spGetCategories_l'))
-	DROP PROCEDURE dbo.spGetCategories_l
+IF EXISTS(SELECT 1 FROM sys.procedures WHERE [object_id] = OBJECT_ID('dbo.spGetCities_l'))
+	DROP PROCEDURE dbo.spGetCities_l
 GO
 
-CREATE PROCEDURE dbo.spGetCategories_l
-	@AParentId BIGINT,
-	@APersianName NVARCHAR(100),
-	@AEnglishName NVARCHAR(100),
+CREATE PROCEDURE dbo.spGetCities_l
+	@AProvinceName NVARCHAR(200),
+	@APersianName NVARCHAR(200),
+	@AEnglishName NVARCHAR(200),
 	@AActiveState TINYINT,
 	@ADeleteState TINYINT,
 	@APagesize INT,
@@ -19,9 +19,9 @@ BEGIN
 	SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;  
 
 	DECLARE
-		@ParentId BIGINT = COALESCE(@AParentId, 0),
-		@PersianName NVARCHAR(100) = LTRIM(RTRIM(@APersianName)),
-		@EnglishName NVARCHAR(100) = LTRIM(RTRIM(@AEnglishName)),
+		@ProvinceName NVARCHAR(200) = LTRIM(RTRIM(@AProvinceName)),
+		@PersianName NVARCHAR(200) = LTRIM(RTRIM(@APersianName)),
+		@EnglishName NVARCHAR(200) = LTRIM(RTRIM(@AEnglishName)),
 		@ActiveState TINYINT = COALESCE(@AActiveState, 0),
 		@DeleteState TINYINT = COALESCE(@ADeleteState, 0),
 		@Pagesize INT = COALESCE(@APagesize, 0),
@@ -36,9 +36,9 @@ BEGIN
 	;WITH MainSelect AS
 	(
 		SELECT *
-		FROM dbo.Categories
+		FROM dbo.Cities
 		WHERE 
-			(@ParentId < 1 OR ParentId = @ParentId)
+			(@ProvinceName IS NULL OR ProvinceName LIKE CONCAT(N'%', @ProvinceName, '%'))
 			AND (@PersianName IS NULL OR PersianName LIKE CONCAT(N'%', @PersianName, '%'))
 			AND (@EnglishName IS NULL OR EnglishName LIKE CONCAT(N'%', @EnglishName, '%'))
 			AND (@ActiveState < 1 OR IsActive = @ActiveState - 1)

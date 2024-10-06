@@ -19,7 +19,7 @@ BEGIN
 	DECLARE 
 		@ParentId BIGINT = @AParentId,
 		@PersianName NVARCHAR(100) = LTRIM(RTRIM(@APersianName)),
-		@EnglishName NVARCHAR(10) = LTRIM(RTRIM(@AEnglishName)),
+		@EnglishName NVARCHAR(100) = LTRIM(RTRIM(@AEnglishName)),
 		@IsActive BIT = @AIsActive
 
 	BEGIN TRY
