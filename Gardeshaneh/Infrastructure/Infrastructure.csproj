@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\DatabaseScripts\Procedures\Place\PlaceProperty\" />
-    <Folder Include="Persistence\DatabaseScripts\Procedures\Place\PlaceGallery\" />
     <Folder Include="Persistence\Repositories\" />
   </ItemGroup>
 
